@@ -10,4 +10,5 @@ const Profile = {
 // Printing Object
 console.log(Profile.fullName); 
 console.log(Profile.age);
+console.log(Profile.hobby);
 console.log(Profile);
