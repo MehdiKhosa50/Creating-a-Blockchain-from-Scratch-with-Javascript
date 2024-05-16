@@ -9,11 +9,7 @@ User.prototype.userLogout=function(){
     console.log(this.email+" "+"Has been logged Out.")
 }
 
-var user_1 = new User("Mehdi Khosa","mehdikhosa50@gmail.com");
-console.log(user_1);
-console.log(user_1.userLogin());
-console.log(user_1.userLogout());
-
-
-// constructorFunction
- 
+var userOne = new User("Mehdi Khosa","mehdikhosa50@gmail.com");
+console.log(userOne);
+console.log(userOne.userLogin());
+console.log(userOne.userLogout());
