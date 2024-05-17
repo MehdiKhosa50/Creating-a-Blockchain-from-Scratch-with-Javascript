@@ -15,4 +15,4 @@ const currentBlockHash = [
         Reciver: "Mehdi2",
     }
 ];
-console.log(bitcoin.createHashBlock(previousHash,currentBlockHash,noncePro));
+console.log(bitcoin.proofOfWork(previousHash,currentBlockHash));
