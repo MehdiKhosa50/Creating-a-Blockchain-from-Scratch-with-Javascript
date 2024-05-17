@@ -3,7 +3,6 @@ function Blockchain(){
     this.chain = [];
     this.pendingTransactions = [];
     this.createNewBlock(100000,"PreviousBlockHash","CurrentBlockHash");
-
 }
 Blockchain.prototype.createNewBlock = function(nonce,prevHash,hash){
     const newBlock = {
