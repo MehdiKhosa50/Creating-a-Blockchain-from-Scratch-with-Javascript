@@ -2,14 +2,16 @@
   "name": "javascriptcoding",
   "version": "1.0.0",
   "description": "For Learning Purpose",
-  "main": "blockchain.js",
+  "main": "Api.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon Api.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
+    "nodemon": "^3.1.0",
     "sha256": "^0.2.0"
   }
 }
