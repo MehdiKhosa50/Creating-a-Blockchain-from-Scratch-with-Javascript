@@ -29,17 +29,17 @@ Blockchain.prototype.createNewTransactions = function(amount,sender,reciver){
     this.pendingTransactions.push(newTransactions);
     return this.getLastBlock().index + 1;
 }
-Blockchain.prototype.createHashBlock = function(previousBlockHash,currentBlockHash,nonce){
-    const dataAsString = previousBlockHash+nonce.toString()+JSON.stringify(currentBlockHash);
+Blockchain.prototype.createHashBlock = function(previousBlockHash,currentBlockData,nonce){
+    const dataAsString = previousBlockHash+nonce.toString()+JSON.stringify(currentBlockData);
     const hash = sha256(dataAsString);
     return hash;
 }
-Blockchain.prototype.proofOfWork = function(previousBlockHash,currentBlockHash){
+Blockchain.prototype.proofOfWork = function(previousBlockHash,currentBlockData){
     let nonce = 0;
-    let hash = this.createHashBlock(previousBlockHash,currentBlockHash,nonce);
+    let hash = this.createHashBlock(previousBlockHash,currentBlockData,nonce);
     while(hash.substring(0,4)!=='0000'){
         nonce++;
-        hash = this.createHashBlock(previousBlockHash,currentBlockHash,nonce);
+        hash = this.createHashBlock(previousBlockHash,currentBlockData,nonce);
         console.log(hash);
     }
     return nonce;
