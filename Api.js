@@ -1,17 +1,20 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const Blockchain = require('./blockchain');
+const bitcoin = new Blockchain();
 
-app.post('/', function (req, res) {
-  res.send('Hello World from Jinnah Hostel! So we have Successfully Installed nodemon')
-})
-app.get('/hitPoint1', function (req, res) {
-    res.send('Hello World from hitPoint1')
-})
-app.get('/hitPoint2', function (req, res) {
-    res.send('Hello World from hitPoint2')
-})
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+
+app.get('/createNewBlock', function (req, res) {
+  res.send(bitcoin);
+});
+app.post('/createNewTransaction', function (req, res) {
+    const blockIndex = bitcoin.createNewTransactions(req.body.amount, req.body.sender, req.body.receiver);
+    res.json({ note: `The new transaction has been added to block ${blockIndex}` });
+});
+
 app.listen(3000,function(){
     console.log("Server is Running");
-})
-
-console.log("this code is running");
+});
