@@ -5,7 +5,11 @@
   "main": "Api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon Api.js"
+    "node_1": "nodemon Api.js 3001",
+    "node_2": "nodemon Api.js 3002",
+    "node_3": "nodemon Api.js 3003",
+    "node_4": "nodemon Api.js 3004",
+    "node_5": "nodemon Api.js 3005"
   },
   "author": "",
   "license": "ISC",
